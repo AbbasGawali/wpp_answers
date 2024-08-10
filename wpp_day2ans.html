@@ -1,0 +1,53 @@
+<!-- // WPP_2 // Write a JavaScript program to print the current window contents. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .container {
+        width: 100%;
+        height: 100vh;
+        background: #0f3875;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .btn {
+        padding: 0.6rem 1rem;
+        border: 2px solid yellow;
+        color: yellow;
+        background-color: transparent;
+        outline: none;
+        font-weight: bold;
+        transition: 0.5s;
+      }
+      .btn:hover {
+        background-color: yellow;
+        color: #0f3875;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <button class="btn">Print Content</button>
+    </div>
+    <script>
+      const btn = document.querySelector(".btn");
+
+      const printContents = () => {
+        window.print();
+      };
+
+      btn.addEventListener("click", printContents);
+    </script>
+  </body>
+</html>
