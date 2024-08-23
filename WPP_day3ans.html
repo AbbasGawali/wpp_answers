@@ -1,0 +1,100 @@
+<!-- // WPP_5. // Display a message when a number is between a range -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+      }
+      .container {
+        background-color: #061f6b;
+        height: 100vh;
+        width: 100%;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .main {
+        display: flex;
+        flex-direction: column;
+        width: 10rem;
+      }
+      .button {
+        margin: 1rem 0;
+        border: none;
+        outline: none;
+        border: 2px solid orange;
+        font-weight: bold;
+        background-color: transparent;
+        color: orange;
+        transition: 0.5s;
+        cursor: pointer;
+        padding: 0.6rem 0.4rem;
+      }
+      input {
+        padding: 0.6rem 0.4rem;
+        outline: none;
+      }
+      .button:hover {
+        background-color: orange;
+        color: #061f6b;
+      }
+      .result {
+        background-color: yellow;
+        color: black;
+        padding: 0.4rem 0.6rem;
+        font-weight: bold;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="main">
+        <input
+          id="number"
+          placeholder="1 - 10"
+          type="number"
+          min="1"
+          max="10"
+          class="guesNumber"
+        />
+        <button id="chBtn" class="button">Check Number</button>
+        <div class="result" id="result"></div>
+      </div>
+    </div>
+    <script>
+      let number = document.getElementById("number");
+      let chBtn = document.getElementById("chBtn");
+      let result = document.getElementById("result");
+
+      const checkNo = () => {
+        if (!number.value) {
+          alert("add a number");
+        } else {
+          result.style.display = "block";
+          let randomNumber = Math.floor(Math.random() * 10) + 1;
+          if (number.value == randomNumber) {
+            console.log("Your match is correct ");
+            result.innerHTML = "Your match is correct ";
+            result.style.background = "yellowgreen";
+          } else {
+            console.log("Number do not match, number was " + randomNumber);
+            result.innerHTML =
+              "Number do not match, number was " + randomNumber;
+            result.style.background = "yellow";
+          }
+        }
+      };
+      chBtn.addEventListener("click", checkNo);
+    </script>
+  </body>
+</html>
