@@ -1,4 +1,4 @@
-// WPP_7.
+// WPP_8.
 
 //Write a js program to check wheather a string starts with "Java" return True if it does not then return False.
 const checkStr = (str, subStr) => {
